@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" integrity="sha512-oHDEc8Xed4hiW6CxD7qjbnI+B07vDdX7hEPTvn9pSZO1bcRqHp8mj9pyr+8RVC2GmtEfI2Bi9Ke9Ass0as+zpg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>PayPro Global test</title>
+    <link href="./styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        function isEmail(email) {
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+}
+        $(document).ready(function(){
+          $("#email").on('input',()=>{
+            isEmail($('#email').val())?$('#email').css('border-color','green') : $('#email').css('border-color','red')
+          })
+        });
+        </script> 
+        
+
+</head>
+
+<body class='flex  pt-[5%] items-center  bg-[#D9DADC] justify-center'>
+    <div class=' font-sans  container bg-[#ffffff]   '>
+        <main class=' flex flex-col '>
+            <header class='bg-[#FFFEF2]  flex items-center '>
+                <div class='container mx-auto flex justify-between items-center w-[72%]'>
+                    <img src="./img/logo.png" alt="logo">
+                    <div class='flex'>
+                        <select name="language" class=' bg-gray-100 text-gray-500  mx-2 px-8 py-1 border rounded-md'>
+                            <option  value="value1" selected>English</option>
+                            <option value="value2" >Ukrainian</option>
+                        </select>
+                        <select class='bg-gray-100 text-gray-500 w-full py-1 border rounded-md' name="select">
+                            <option value="value1" selected>USD</option>
+                            <option value="value2" >UAH</option>
+                        </select>
+                    </div>
+                </div>
+               
+            </header>
+            <section class='container w-[75%] pt-[34px] mx-auto flex  '>
+                <div class='w-1/2  px-5  '>
+                    <div class='p-4 border rounded-md shadow-xl'>
+
+                    
+                    <div class='relative text-2xl py-2 mb-4 font-medium inline'>Billing information  <div class='absolute top-5 right-[-25px] bg-gray-300 rounded-full flex justify-center items-center w-4 h-4'><img src="./img/question.png" alt="questionIcon"></div></div>
+                    
+                    <form id='payForm'class='py-5' action="# ">
+                    <div class='names flex '>
+                        <input required class='border p-2 w-[49%] mr-5 ' type="text" placeholder='First name *'>
+                        <input required class='border p-2 w-[49%]' type="text" placeholder='Last name *'>
+                    </div>
+                    <input type="text" id='email' class='border p-2 w-full block mb-2 outline-none' placeholder='E-mail *'>
+                    <select name="select" class='p-2 w-full border rounded-sm mb-2'>
+                        <option value="value1" selected>Ukraine</option>
+                        <option value="value2" >USA</option>
+                    </select>
+                    <input class='border p-2 w-full mb-2' type="number" placeholder='Phone number *'>
+                    <div class='flex justify-between '>
+                        <div class='method bg-[#dde5ee]'>
+                            <img class='mx-auto' src="./img/visa.png" alt="visa">
+                        </div>
+                        <div class='method '>
+                            <img class='mx-auto' src="./img/paypal.png" alt="paypal">
+                        </div>
+                    </div>
+                    <div id='payMethod' class='bg-[#dde5ee] p-4' >
+                    <div id='visa'>
+                        <input class='p-2 w-full  mb-2' type="text" placeholder='Card number *'>
+                       <div class='flex justify-between items-center'>
+                        <select class='p-2 w-1/4' name="selectMonth">
+                            <option value="value1" selected>01</option>
+                            <option value="value2" >02</option>
+                        </select>
+                        <select class='p-2 w-1/4' name="selectDay">
+                            <option value="value1" selected>01</option>
+                            <option value="value2" >02</option>
+                        </select>
+                        <input class='p-2 w-1/4' type="text" placeholder='Security code *'>
+                       </div>
+                    </div>
+                    </div>
+                    <button  class='bg-[#FFC107] hover:bg-[#F7CC51] w-full font-bold rounded-md text-lg uppercase    py-4 my-4'>Submit order</button>
+                </form>
+                   
+                </div>
+                </div>
+                <div class='w-1/2 px-5'>
+                    <div id='card'>
+                        <div class='topCard flex uppercase text-[9px] text-[#666C70] border-b mb-2 justify-between '>
+                            <span>product</span>
+                            <span>price</span>
+                        </div>
+                        <div class='relative border-b mb-2 '>
+                            <img class='absolute left-0 top-0 h-[75px]' src="./img/product.png" alt="productImg">
+                            <div class='pl-[66px] flex flex-col'>
+                                <span class='font-bold'>Test Product</span>
+                                <span class='text-[#666C70]'>Product description</span>
+                                <span class='text-[#2F76F6] mb-6'>Auto-renewal</span>
+                            </div>
+
+                            <span class='absolute right-0 top-0 font-medium mb-2'>100.00 USD</span>
+                        </div>
+                        
+                        <span class='relative border-b mb-2 block text-right font-medium pb-2'>
+                            <div class='absolute right-[185px] top-1 bg-gray-300 rounded-full flex justify-center items-center w-4 h-4'><img src="./img/question.png" alt="questionIcon"></div>
+                            VAT (20.00%): 20.00 USD</span>
+                        <span class='text-[#80C600] block font-medium text-lg text-right mb-2'>TOTAL: 120.00 USD</span>
+                    </div>
+                    <div id='rightSideContent' class='text-[#666C70] pt-4'>
+                        <p>
+                            Do not hesitate to contact our CUSTOMER CARE CENTER for more information about payment and
+                            delivery.
+                        </p>
+                        <p class='mb-2'>
+                            Please state the order ID from the confirmation email as a reference so that we can assist
+                            you efficiently.</p>
+                        <p class='mb-2'>
+                            24/7 English phone support for online payment related issues:
+                        </p>
+                        <div class='flex items-center' id='phone_numbers'>
+                            <img src="./img/phone24.png" class='px-2'  alt="timeIcon">
+                            <div class='pl-2 mb-2'>
+                                <p><span class='font-bold'>+ 1-888-317-4868</span> (Toll free)</p>
+
+                                <p><span class='font-bold'>+ 1-647-977-7769</span> (International)</p>
+                            </div>
+                        </div>
+                        <p class='mb-2'>
+                            By submitting your Order, you acknowledge that you are purchasing from PayPro Global (PayPro
+                            Global, Inc., PayPro Europe Limited or PayPro U.S. Inc.), an authorized e-Commerce reseller.
+                        </p>
+                        <p>
+                            Once the transaction is complete, your contact information will be shared with the product
+                            vendor for ongoing support purposes.
+                        </p>
+                        <div id='partnersLogo' class='flex justify-center gap-3 py-5 '>
+                            <img  src="./img/pci.png" alt="">
+                            <img  src="./img/Trusted.png" alt="">
+                            <img  src="./img/Norton.png" alt="">
+                        </div>
+                    </div>
+
+
+                </div>
+            </section>
+            <footer class='flex w-[72%] text-[#666C70] justify-between mx-auto pb-2  container items-center '>
+                <span>Privacy Policy | Terms and Conditions | Refund Policy</span>
+                <span>© PayPro Global, Inc. 2021</span>
+            </footer>
+        </main>
+        
+    </div>
+</body>
+
+</html>

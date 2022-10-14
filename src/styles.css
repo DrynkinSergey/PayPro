@@ -1,0 +1,31 @@
+
+
+
+
+
+body{
+    font-family: 'Roboto', 'sans-serif';
+}
+.names{
+    padding-bottom: 10px;
+}
+
+
+.method{
+    width: 47%;
+    padding: 10px 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #E1E1E1;
+}
+
+
+
+
+
+
+
+
+
+
