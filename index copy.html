@@ -85,8 +85,8 @@
 						</div>
 					</div>
 				</header>
-				<section class="container w-[95%] lg:w-[75%] pt-[34px] mx-auto grid  md:grid-cols-2 gap-8 grid-rows-3">
-					<div class="col-start-1 md:col-start-1 md:col-end-2 col-end-3 row-span-3 md:order-1 order-2 ">
+				<section class="container w-[95%] lg:w-[75%] pt-[34px] mx-auto flex flex-col md:flex-row">
+					<div class="w-full order-2 md:order-1 md:w-1/2 md:px-5">
 						<div class="p-4 border rounded-md shadow-xl">
 							<div class="relative text-2xl py-2 mb-4 font-medium inline">
 								Billing information
@@ -198,7 +198,8 @@
 							</form>
 						</div>
 					</div>
-						<div id="card" class="col-start-1 md:col-start-2 col-end-3 row-span-1	order-1">
+					<div class="w-full order-1 md:order-2 pt-2 md:w-1/2 md:px-5">
+						<div id="card">
 							<div
 								class="topCard flex uppercase text-[9px] text-[#666C70] border-b mb-2 justify-between"
 							>
@@ -237,7 +238,7 @@
 								>TOTAL: 120.00 USD</span
 							>
 						</div>
-						<div id="rightSideContent" class="text-[#666C70]  col-start-1 md:col-start-2 row-span-2 col-end-3 order-3">
+						<div id="rightSideContent" class="text-[#666C70] pt-4 ">
 							<p>
 								Do not hesitate to contact our CUSTOMER CARE CENTER for more
 								information about payment and delivery.
@@ -278,7 +279,7 @@
 								<img class='w-[115px]' src="./src/img/Norton.png" alt="partnersLogo" />
 							</div>
 						</div>
-					
+					</div>
 				</section>
 				<footer
 					class="flex w-[95%] md:w-[72%] text-[#666C70] justify-between mx-auto pb-2 container items-center"
