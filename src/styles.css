@@ -21,6 +21,7 @@ body{
 }
 .activeTab{
     background-color: #E9F0FC;
+    border-bottom: none;
 }
 
 .lds-heart {
